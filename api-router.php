@@ -10,6 +10,7 @@ $router->addRoute('characters', 'GET', 'CharacterApiController', 'getCharacters'
 $router->addRoute('characters/:ID', 'GET', 'CharacterApiController', 'getCharacter');
 $router->addRoute('characters/:ID', 'DELETE', 'CharacterApiController', 'deleteCharacter');
 $router->addRoute('characters', 'POST', 'CharacterApiController', 'insertCharacter'); 
+$router->addRoute('characters/orderby/:order', 'GET', 'CharacterApiController', 'orderUniverse');
 
 
 $router->route($_GET["resource"], $_SERVER['REQUEST_METHOD']);

@@ -47,5 +47,27 @@ class CharacterModel {
         $query = $this->db->prepare('DELETE FROM db_personajes WHERE id = ?');
         $query->execute([$id]);
     }
+
+    function getUniverse($order = null) {
+
+        if(!empty($order)){
+            if ($order == "DESC" || $order == "desc"){
+                $query = $this->db->prepare('SELECT * FROM db_personajes JOIN db_universos
+                                                on db_personajes.universo = db_universos.id
+                                                ORDER BY db_personajes.universo desc');
+        
+            }else if($order == "ASC" || $order == "asc"){
+            $query = $this->db->prepare('SELECT * FROM db_personajes JOIN db_universos
+                                            on db_personajes.universo = db_universos.id
+                                            ORDER BY db_personajes.universo asc');
+            }
+                }else{
+                $query = $this->db->prepare('SELECT * FROM db_personajes JOIN db_universos
+                                                on db_personajes.universo = db_universos.id');
+            }
+            $query->execute();
+            $universe = $query->fetchAll(PDO::FETCH_OBJ);
+            return $universe;
+        }
 }
 
