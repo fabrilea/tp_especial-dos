@@ -8,23 +8,6 @@ let form = document.querySelector('#character-form');
 form.addEventListener('submit', insertCharacter);
 
 
-let app = new Vue({
-    el: "#template-vue-characters",
-    data: {
-        subtitle: "Los personajes se renderizan desde el cliente usando Vue.js",
-        characters: [] 
-    }
-});
-
-function getCharacters() {
-    fetch("api/tareas")
-    .then(response => response.json())
-    .then(characters => {
-        app.characters = characters; 
-    })
-    .catch(error => console.log(error));
-}
-
 async function getAll() {
     try {
         let response = await fetch(URL);
@@ -46,9 +29,12 @@ async function insertCharacter(e) {
     
     let data = new FormData(form);
     let character = {
-        titulo: data.get('titulo'),
-        descripcion: data.get('descripcion'),
-        prioridad: data.get('prioridad'),
+        personaje: data.get('personaje'),
+        raza: data.get('raza'),
+        afiliacion: data.get('afiliacion'),
+        lgbt: data.get('lgbt'),
+        fem: data.get('fem'),
+        universo: data.get('universo'),
     };
 
     try {
@@ -61,10 +47,10 @@ async function insertCharacter(e) {
             throw new Error('Error del servidor');
         }
 
-        let ncharacter = await response.json();
+        let nCharacter = await response.json();
 
 
-        characters.push(ncharacter);
+        characters.push(nCharacter);
         showCharacters();
 
         form.reset();
@@ -97,10 +83,10 @@ function showCharacters() {
 
         let html = `
             <li>
-                <span> <b>${character.personaje}</b> - ${character.raza} <b>${character.afiliacion}</b>
-                    <b>${character.lgbt}</b> <b>${character.fem}</b> (universo ${character.universo})</span>
-                <div>
-                    <a href='#' data-character="${character.id}" type='button'>Borrar</a>
+                <span> <b>${character.personaje}</b> ${character.raza} <b>${character.afiliacion}</b>
+                    <b>${character.lgbt}</b> <b>${character.fem}</b> ${character.universo}</span>
+                <div class="ml-auto">
+                    <a href='#' data-character="${character.id}" type='button' class='btn btn-danger btn-delete'>Borrar</a>
                 </div>
             </li>
         `;

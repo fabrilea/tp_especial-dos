@@ -51,12 +51,16 @@ class CharacterApiController {
     public function insertCharacter($params = null) {
         $character = $this->getData();
 
-        if (empty($character->name) || empty($character->race) || empty($character->afiliation) || 
-            empty($character->lgbt) || empty($character->fem) || empty($character->universe)) {
+        if ((empty($character->personaje) || empty($character->raza) 
+            || empty($character->afiliacion)) 
+            || (($character->universo > 5) || ($character->universo < 1))
+            || (($character->lgbt > 1) || ($character->lgbt < 0)) 
+            || (($character->fem > 1) || ($character->fem < 0))
+            ){
             $this->view->response("Rellene los campos", 400);
         } else {
-            $id = $this->model->insert($character->name, $character->race, $character->afiliation, 
-                                        $character->lgbt, $character->fem, $character->universe);
+            $id = $this->model->insert($character->personaje, $character->raza, $character->afiliacion, 
+                                        $character->lgbt, $character->fem, $character->universo);
             $character = $this->model->get($id);
             $this->view->response($character, 201);
         }

@@ -13,7 +13,9 @@ class CharacterModel {
     public function getAll() {
 
         
-        $query = $this->db->prepare("SELECT * FROM db_personajes");
+        $query = $this->db->prepare('SELECT db_personajes.id as id, imagen,personaje, raza, afiliacion, lgbt, fem, db_universos.universo as universo 
+                                    FROM db_personajes 
+                                    INNER JOIN db_universos on db_personajes.universo = db_universos.id');
         $query->execute();
 
         $characters = $query->fetchAll(PDO::FETCH_OBJ); 
@@ -22,7 +24,7 @@ class CharacterModel {
     }
 
     public function get($id) {
-        $query = $this->db->prepare("SELECT * FROM db_personajes WHERE id = ?");
+        $query = $this->db->prepare('SELECT * FROM db_personajes WHERE id = ?');
         $query->execute([$id]);
         $character = $query->fetch(PDO::FETCH_OBJ);
         
@@ -31,10 +33,10 @@ class CharacterModel {
 
 
 
-    public function insert($name, $race, $afiliation, $lgbt, $fem, $universe) {
+    public function insert($character, $race, $afiliation, $lgbt, $fem, $universe) {
         $query = $this->db->prepare("INSERT INTO db_personajes (personaje, raza, afiliacion, lgbt, fem, universo) 
                                     VALUES (?, ?, ?, ?, ?, ?)");
-        $query->execute([$name, $race, $afiliation, $lgbt, $fem, $universe, false]);
+        $query->execute([$character, $race, $afiliation, $lgbt, $fem, $universe]);
 
         return $this->db->lastInsertId();
     }
