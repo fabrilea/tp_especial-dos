@@ -2,16 +2,21 @@
 
 require_once './app/models/character.model.php';
 require_once './app/views/api.view.php';
+require_once './app/helpers/auth-api.helper.php';
+
 
 class CharacterApiController {
     private $model;
     private $view;
+    private $authHelper;
 
     private $data;
 
     public function __construct() {
         $this->model = new CharacterModel();
         $this->view = new ApiView();
+        $this->authHelper = new AuthApiHelper();
+
 
         $this->data = file_get_contents("php://input");
     }
@@ -28,6 +33,11 @@ class CharacterApiController {
     public function getCharacter($params = null) {
 
         $id = $params[':ID'];
+
+        if(!$this->authHelper->isLoggedIn()){
+            $this->view->response("No estas logeado", 401);
+            return;
+        }
         $character = $this->model->get($id);
 
 
@@ -49,6 +59,12 @@ class CharacterApiController {
     }
 
     public function insertCharacter($params = null) {
+        
+        if(!$this->authHelper->isLoggedIn()){
+            $this->view->response("No estas logeado", 401);
+            return;
+        }
+        
         $character = $this->getData();
 
         if ((empty($character->personaje) || empty($character->raza) 
