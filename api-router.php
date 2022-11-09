@@ -13,6 +13,8 @@ $router->addRoute('characters/:ID', 'GET', 'CharacterApiController', 'getCharact
 $router->addRoute('characters/:ID', 'DELETE', 'CharacterApiController', 'deleteCharacter');
 $router->addRoute('characters', 'POST', 'CharacterApiController', 'insertCharacter'); 
 $router->addRoute('characters/orderby/:order', 'GET', 'CharacterApiController', 'orderUniverse');
+$router->addRoute('characters/universe/:universe', 'GET', 'CharacterApiController', 'filterUniverse');
+$router->addRoute('characters/universe/:universe/:order', 'GET', 'CharacterApiController', 'orderFilterUniverse');
 
 
 $router->addRoute("auth/token", 'GET', 'AuthApiController', 'getToken');
