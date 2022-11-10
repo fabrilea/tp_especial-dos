@@ -4,17 +4,15 @@ Bienvenidxs a la base de datos de personajes de Marvel
 el archivo que se encuentra dentro de la carpeta 'database'.
 
 -El endpoint que se debe utilizar es:
-    http://localhost/tpe-dos/api/characters
-
-    para así poder visualizar las listas de personajes.
+    "http://localhost/tpe-dos/api/characters"
+para así poder visualizar las listas de personajes.
 
 -Si se quiere ver algun personaje en particular se debe poner al lado de '/characters' en la url '/:id' y el ':id' representando el número de id
 especifico que se quiere visualizar.
 
 -Si se quiere borrar debe ser con el comando DELETE y se debe ingresar un user: Fabri y password: Marvel en Basic Auth, borrar characters en la url y poner auth/token, utilizando la función GET,quedando así:
     http://localhost/tpe-dos/api/auth/token
-luego se imprimirá el token, se debe poner la url del archivo que se quiere borrar con su id (por ejem: 'characters/1'), e ingresar el token
-en Bearer Token y envíar lo pedido.
+luego se imprimirá el token, se debe poner la url del archivo que se quiere borrar con su id (por ejem: 'characters/1'), e ingresar el token en Bearer Token y envíar lo pedido.
 
 -Para añadir se deben cumplir los espacios:
 'personaje'
