@@ -28,9 +28,8 @@ Para lgbt y fem se debe escribir '1' si se refiere a que el personaje pertenece 
 4 - universo 65
 5 - universo 20080
 
--Si se quiere ordenar los personajes se debe poner al lado de 'characters' en la url '/orderby' y poner a su vez
-'/asc' o '/ASC' si se decide que es ascendente, '/desc' o '/DESC' si se decide que sea descendente.
+-Si se quiere ordenar los personajes se debe poner al lado de 'characters' en la url '/orderby' y poner a su vez una de las 5 opciones '/id', '/character', '/race', '/afiliation', '/lgbt', '/fem', '/universe' y por último poner '/asc' o '/ASC' si se decide que traiga los datos de manera ascendente, '/desc' o '/DESC' si se decide que los traiga de manera descendente.
 
 -Si se quiere filtrar los universos se pone al lado de characters '/universe' y al lado '/:id' representando el número de universo del 1 al 5.
 
--Si se quiere ordenar el universo filtrado se debe poner lo anterior junto con '/asc' o '/ASC' si se decide que es ascendente, '/desc' o '/DESC' si se decide que sea descendente.
+-Si se quiere ordenar el universo filtrado se debe poner lo anterior junto con '/asc' o '/ASC' si se decide que traiga los datos de manera ascendente, '/desc' o '/DESC' si se decide que los traiga de manera descendente.
