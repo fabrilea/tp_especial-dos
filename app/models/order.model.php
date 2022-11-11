@@ -44,8 +44,8 @@ class OrderModel {
             break;
             }
             $query->execute();
-            $id = $query->fetchAll(PDO::FETCH_OBJ);
-            return $id;
+            $characters = $query->fetchAll(PDO::FETCH_OBJ);
+            return $characters;
         }
 
     function getCharacterOrder($order = null) {
@@ -83,8 +83,8 @@ class OrderModel {
             break;
             }
             $query->execute();
-            $character = $query->fetchAll(PDO::FETCH_OBJ);
-            return $character;
+            $characters = $query->fetchAll(PDO::FETCH_OBJ);
+            return $characters;
         }
 
 
@@ -123,8 +123,8 @@ class OrderModel {
             break;
             }
             $query->execute();
-            $race = $query->fetchAll(PDO::FETCH_OBJ);
-            return $race;
+            $characters = $query->fetchAll(PDO::FETCH_OBJ);
+            return $characters;
         }
             
 
@@ -163,8 +163,8 @@ class OrderModel {
             break;
             }
             $query->execute();
-            $afiliation = $query->fetchAll(PDO::FETCH_OBJ);
-            return $afiliation;
+            $characters = $query->fetchAll(PDO::FETCH_OBJ);
+            return $characters;
         }
 
 
@@ -203,8 +203,8 @@ class OrderModel {
             break;
             }
             $query->execute();
-            $lgbt = $query->fetchAll(PDO::FETCH_OBJ);
-            return $lgbt;
+            $characters = $query->fetchAll(PDO::FETCH_OBJ);
+            return $characters;
         }
 
     function getFemOrder($order = null) {
@@ -242,8 +242,8 @@ class OrderModel {
             break;
             }
             $query->execute();
-            $fem = $query->fetchAll(PDO::FETCH_OBJ);
-            return $fem;
+            $characters = $query->fetchAll(PDO::FETCH_OBJ);
+            return $characters;
         }
 
     function getUniverseOrder($order = null) {
@@ -281,7 +281,7 @@ class OrderModel {
             break;
             }
             $query->execute();
-            $universe = $query->fetchAll(PDO::FETCH_OBJ);
-            return $universe;
+            $characters = $query->fetchAll(PDO::FETCH_OBJ);
+            return $characters;
         }
 }

@@ -89,18 +89,11 @@ class CharacterApiController {
         
         if(!empty($params[':order'])){
             $order = $params[':order'];
-            if($order == "DESC" || $order == "desc"){
-                $id = $this->orderModel->getIdOrder($order);
-            }else if($order == "ASC" || $order == "asc"){
-                $id = $this->orderModel->getIdOrder($order);
-            }else if($order != "DESC" || $order != "desc" 
-                     || $order != "ASC" || $order != "asc"){
-                        return $this->view->response("el order by está mal escrito, escriba DESC, desc, ASC o asc", 404);
-                     }
-        }else{
-            $id = $this->model->getIdOrder();
+            $id = $this->orderModel->getIdOrder($order);
         }
+
         return $this->view->response($id, 200);
+        
     }
     
     function orderCharacter($params = null){
