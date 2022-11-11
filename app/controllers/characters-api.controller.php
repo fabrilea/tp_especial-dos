@@ -37,10 +37,6 @@ class CharacterApiController {
 
         $id = $params[':ID'];
 
-        if(!$this->authHelper->isLoggedIn()){
-            $this->view->response("No estas logeado", 401);
-            return;
-        }
         $character = $this->model->get($id);
 
 
@@ -52,6 +48,11 @@ class CharacterApiController {
 
     public function deleteCharacter($params = null) {
         $id = $params[':ID'];
+
+        if(!$this->authHelper->isLoggedIn()){
+            $this->view->response("No estas logeado", 401);
+            return;
+        }
 
         $character = $this->model->get($id);
         if ($character) {
