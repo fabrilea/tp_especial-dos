@@ -32,5 +32,7 @@ $router->addRoute('characters/universe/:universe/:order', 'GET', 'CharacterApiCo
 $router->addRoute("auth/token", 'GET', 'AuthApiController', 'getToken');
 
 
+$router->addRoute('characters/page/:page', 'GET', 'CharacterApiController', 'showLimit');
+
 /*Obtener Método*/
 $router->route($_GET["resource"], $_SERVER['REQUEST_METHOD']);

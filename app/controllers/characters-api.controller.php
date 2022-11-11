@@ -228,4 +228,18 @@ class CharacterApiController {
         }
         return $this->view->response($universe, 200);
     }
+
+    public function showLimit($params = null){
+
+        if(!empty($params[':page'])){
+
+            $page = $params[':page'];
+            $number = ($page - 1)*5 ;
+ 
+            $characters = $this->orderModel->getLimit($number);
+
+            return $this->view->response($characters, 200);
+
+        }
+    }
 }

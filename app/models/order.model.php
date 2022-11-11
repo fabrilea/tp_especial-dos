@@ -284,4 +284,13 @@ class OrderModel {
             $characters = $query->fetchAll(PDO::FETCH_OBJ);
             return $characters;
         }
+
+        function getLimit($number){
+
+            $query = $this->db->prepare("SELECT * FROM db_personajes LIMIT 5 OFFSET $number");
+            $query->execute();
+
+            return $query->fetchAll(PDO::FETCH_OBJ);
+
+}
 }
