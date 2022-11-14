@@ -17,6 +17,7 @@ class CharacterModel {
                                      INNER JOIN db_universos 
                                      on db_personajes.universo = db_universos.id 
                                      WHERE db_personajes.id = ?');
+
         $query->execute([$id]);
         $character = $query->fetch(PDO::FETCH_OBJ);
         
@@ -28,6 +29,7 @@ class CharacterModel {
     public function insert($character, $race, $afiliation, $lgbt, $fem, $universe) {
         $query = $this->db->prepare("INSERT INTO db_personajes (personaje, raza, afiliacion, lgbt, fem, universo) 
                                      VALUES (?, ?, ?, ?, ?, ?)");
+
         $query->execute([$character, $race, $afiliation, $lgbt, $fem, $universe]);
 
         return $this->db->lastInsertId();
@@ -38,6 +40,7 @@ class CharacterModel {
     function delete($id) {
         $query = $this->db->prepare('DELETE FROM db_personajes 
                                      WHERE id = ?');
+
         $query->execute([$id]);
     }
 
@@ -53,7 +56,9 @@ class CharacterModel {
                                      ORDER BY $params[field] $params[sort]
                                      LIMIT $params[limit]
                                      OFFSET $params[offset]");
+
         $query->execute();
+        
         return $query->fetchAll(PDO::FETCH_OBJ);
     }
 }
