@@ -25,13 +25,13 @@ Otras opciones:
 
 NOTA: si se quieren utilizar dos o más de estas funciones a la vez se debe poner un '&' para separarlas quedando:
 
-"http://localhost/tpe-dos/api/characters?sort=asc&field=id"
+    "http://localhost/tpe-dos/api/characters?sort=asc&field=id"
 
 
 -Si se quiere ver algun personaje en particular se debe poner al lado de '/characters' en la url '/:id' y el ':id' representando el número de id
 especifico que se quiere visualizar. Por ejemplo:
 
-"http://localhost/tpe-dos/api/characters/1" (se mostraría el personaje de Wiccan solamente).
+    "http://localhost/tpe-dos/api/characters/1" (se mostraría el personaje de Wiccan solamente).
 
 
 -Si se quiere borrar debe ser con el comando DELETE y se debe ingresar un user: Fabri y password: Marvel en Basic Auth, borrar characters en la url y poner auth/token, utilizando la función GET,quedando así:
