@@ -13,6 +13,8 @@ Bienvenidxs a la base de datos de personajes de Marvel
 'where= (y elegir un universo del 1 al 5 (1 - universo 616, 2 - paralelo utópico, 3 - universo 19999, 4 - universo 65, 5 - universo 20080)) default: todos', 
 'limit= (un número aleatorio) default: todos', 
 'offset= (un número aleatorio) default: 0'.
+NOTA: si se quieren utilizar dos o más de estas funciones a la vez se debe poner un '&' para separarlas quedando:
+"http://localhost/tpe-dos/api/characters?sort=asc&field=id"
 
 -Si se quiere ver algun personaje en particular se debe poner al lado de '/characters' en la url '/:id' y el ':id' representando el número de id
 especifico que se quiere visualizar. Por ejemplo:
