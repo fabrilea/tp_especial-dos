@@ -97,11 +97,11 @@ class CharacterApiController {
         }
         if (isset($_GET['limit'])){
             $params["limit"] = $_GET['limit'];
+            if (isset($_GET['offset'])){
+                $page = (($_GET['offset']-1)*$params["limit"]);
+                $params["offset"] = $page;
+            }
         }
-        if (isset($_GET['offset'])){
-            $params["offset"] = $_GET['offset'];
-        }
-
         $db = $this->model->getAllSortBy($params);
         $this->view->response($db);
     }

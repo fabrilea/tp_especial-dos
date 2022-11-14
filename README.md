@@ -19,7 +19,7 @@ Order by:
 
 'limit= (un número aleatorio para limitar la cantidad de personaje que se ven) default: todos'
 
-'offset= (un número aleatorio para indicar que a partir del siguiente número del que se ingresa es donde arranca el listado) default: 0'
+'offset= (un número aleatorio para indicar la pagina del listado que se quiere ver dependiendo del límite puesto (ej: "limit=3&offset=2" muestra la segunda página del listado que fue seteado para mostrar de solo a 3 personajes a la vez)) default: 0'
 
 NOTA: si se quieren utilizar dos o más de estas funciones a la vez se debe poner un '&' para separarlas quedando:
 
@@ -38,20 +38,22 @@ especifico que se quiere visualizar. Por ejemplo:
 
 luego se imprimirá el token, se debe poner la url del archivo que se quiere borrar con su id (por ejem: 'characters/1'), e ingresar el token en Bearer Token y envíar lo pedido.
 
--Para añadir un personaje se deben cumplir los espacios:
+-Para añadir un personaje se deben cumplir los siguientes espacios en formato de JSON:
 
-'personaje'
 
-'raza'
+{
+    "personaje":
 
-'afiliacion'
+    "raza":
 
-'lgbt'
+    "afiliacion":
 
-'fem'
+    "lgbt":
 
-'universo'
+    "fem":
 
+    "universo":
+}
 
 Para los campos lgbt y fem se debe escribir '1' si se refiere a que el personaje pertenece a dicha comunidad y '0' si no lo hace. Y para universo es del 1 al 5 dependiendo de si pertenece a:
 
