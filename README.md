@@ -7,6 +7,7 @@ Bienvenidxs a la base de datos de personajes de Marvel
 
 
 -Si se quiere ordenar, filtrar, limitar o paginar los personaje al lado de 'characters' se debe poner '?' y poner a su vez una de las 5 opciones: 
+
 Order by:
     'sort= (asc (ascendente) o desc (descendente)) default: asc'
     'field= (elegir uno de los siguientes campos: id, personaje, raza, afiliacion, lgbt, fem, universo) default: id'
