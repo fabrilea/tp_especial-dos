@@ -60,14 +60,14 @@ luego se imprimirá el token, se debe poner la url del archivo que se quiere bor
 
 Para los campos lgbt y fem se debe escribir '1' si se refiere a que el personaje pertenece a dicha comunidad y '0' si no lo hace. Y para universo es del 1 al 5 dependiendo de si pertenece a:
 
-1 - universo 616
+    1 - universo 616
 
-2 - paralelo utópico
+    2 - paralelo utópico
 
-3 - universo 19999
+    3 - universo 19999
 
-4 - universo 65
+    4 - universo 65
 
-5 - universo 20080
+    5 - universo 20080
 
 Por último se debe loggear nuevamente (si previamente lo estaba no será necesario) como fue explicado en el punto anterior y se deberá enviar el personaje creado.
