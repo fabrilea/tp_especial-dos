@@ -41,19 +41,20 @@ luego se imprimirá el token, se debe poner la url del archivo que se quiere bor
 -Para añadir un personaje se deben cumplir los siguientes espacios en formato de JSON:
 
 
-{
-    "personaje":
+    {
+        
+        "personaje":
 
-    "raza":
+        "raza":
 
-    "afiliacion":
+        "afiliacion":
 
-    "lgbt":
+        "lgbt":
 
-    "fem":
+        "fem":
 
-    "universo":
-}
+        "universo":
+    }
 
 Para los campos lgbt y fem se debe escribir '1' si se refiere a que el personaje pertenece a dicha comunidad y '0' si no lo hace. Y para universo es del 1 al 5 dependiendo de si pertenece a:
 
