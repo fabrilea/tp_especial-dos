@@ -9,22 +9,6 @@ class CharacterModel {
     }
 
     
-    
-    public function getAll() {
-
-        
-        $query = $this->db->prepare('SELECT db_personajes.id as id, personaje, raza, afiliacion, lgbt, fem, db_universos.universo 
-                                     as universo 
-                                     FROM db_personajes 
-                                     INNER JOIN db_universos on db_personajes.universo = db_universos.id
-                                     ORDER BY db_personajes.id asc');
-        $query->execute();
-
-        $characters = $query->fetchAll(PDO::FETCH_OBJ); 
-        
-        return $characters;
-    }
-
     public function get($id) {
         $query = $this->db->prepare('SELECT db_personajes.id as id, personaje, raza, afiliacion, lgbt, fem, db_universos.universo 
                                      as universo 
@@ -54,58 +38,20 @@ class CharacterModel {
         $query->execute([$id]);
     }
 
-    function getUniverse($universe){
-        
-        $query = $this->db->prepare('SELECT db_personajes.id 
-                                        as id, imagen,personaje, raza, afiliacion, lgbt, fem, db_universos.universo 
-                                        as universo FROM db_personajes 
-                                        INNER JOIN db_universos on db_personajes.universo = db_universos.id 
-                                        WHERE db_personajes.universo = ?');
-        $query->execute([$universe]);
 
+    function getAllSortBy($params) {
+        $query = $this->db->prepare("SELECT db_personajes.id 
+                                        as id, personaje, raza, afiliacion, lgbt, fem, db_universos.universo 
+                                        as universo 
+                                        FROM db_personajes 
+                                        INNER JOIN db_universos 
+                                        on db_personajes.universo = db_universos.id
+                                        WHERE db_personajes.universo = $params[where]
+                                        ORDER BY $params[field] $params[sortBy]
+                                        LIMIT $params[limit]
+                                        OFFSET $params[offset]");
+        $query->execute();
         return $query->fetchAll(PDO::FETCH_OBJ);
-
     }
-
-    function getFilterUniverse($order, $universe){
-
-        switch($order){
-            case 'DESC':
-            case'desc':
-                $query = $this->db->prepare('SELECT db_personajes.id 
-                                                as id, personaje, raza, afiliacion, lgbt, fem, db_universos.universo 
-                                                as universo 
-                                                FROM db_personajes 
-                                                INNER JOIN db_universos 
-                                                on db_personajes.universo = db_universos.id
-                                                WHERE db_personajes.universo = ?
-                                                ORDER BY db_personajes.id desc');
-            break;
-
-            case 'ASC':
-            case'asc':
-                $query = $this->db->prepare('SELECT db_personajes.id 
-                                                as id, personaje, raza, afiliacion, lgbt, fem, db_universos.universo 
-                                                as universo 
-                                                FROM db_personajes 
-                                                INNER JOIN db_universos 
-                                                on db_personajes.universo = db_universos.id
-                                                WHERE db_personajes.universo = ?
-                                                ORDER BY db_personajes.id asc');
-            break;
-            
-            default:
-                $query = $this->db->prepare('SELECT db_personajes.id 
-                                                as id, personaje, raza, afiliacion, lgbt, fem, db_universos.universo 
-                                                as universo 
-                                                FROM db_personajes 
-                                                INNER JOIN db_universos 
-                                                on db_personajes.universo = db_universos.id
-                                                WHERE db_personajes.universo = ?');
-            break;
-            }
-            $query->execute([$universe]);
-                        return $query->fetchAll(PDO::FETCH_OBJ); 
-            }
 }
 
