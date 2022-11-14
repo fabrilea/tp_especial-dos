@@ -23,7 +23,7 @@ Bienvenidxs a la base de datos de personajes de Marvel
 
     'offset= (un número aleatorio para indicar la pagina del listado que se quiere ver dependiendo del límite puesto (ej: "limit=3&offset=2" muestra la segunda página del listado que fue seteado para mostrar de solo a 3 personajes a la vez)) default: 0'
 
-NOTA: si se quieren utilizar dos o más de estas funciones a la vez se debe poner un '&' para separarlas quedando:
+    NOTA: si se quieren utilizar dos o más de estas funciones a la vez se debe poner un '&' para separarlas quedando:
 
     "http://localhost/tpe-dos/api/characters?sort=asc&field=id"
 
