@@ -9,19 +9,19 @@ Bienvenidxs a la base de datos de personajes de Marvel
 
 -Si se quiere ordenar, filtrar, limitar o paginar los personaje al lado de 'characters' se debe poner '?' y poner a su vez una de las 5 opciones: 
 
-Para ordenar se necesitan completar al menos una de los dos o ambos campos:
+    Para ordenar se necesitan completar al menos una de los dos o ambos campos:
 
---'sort= (asc (ascendente) o desc (descendente)) default: asc'
+    --'sort= (asc (ascendente) o desc (descendente)) default: asc'
 
---'field= (elegir uno de los siguientes campos: id, personaje, raza, afiliacion, lgbt, fem, universo) default: id'
+    --'field= (elegir uno de los siguientes campos: id, personaje, raza, afiliacion, lgbt, fem, universo) default: id'
 
-Otras opciones:
+    Otras opciones:
 
-'where= (y elegir un universo del 1 al 5 (1 - universo 616, 2 - paralelo utópico, 3 - universo 19999, 4 - universo 65, 5 - universo 20080)) default: todos'
+    'where= (y elegir un universo del 1 al 5 (1 - universo 616, 2 - paralelo utópico, 3 - universo 19999, 4 - universo 65, 5 - universo 20080)) default: todos'
 
-'limit= (un número aleatorio para limitar la cantidad de personaje que se ven) default: todos'
+    'limit= (un número aleatorio para limitar la cantidad de personaje que se ven) default: todos'
 
-'offset= (un número aleatorio para indicar la pagina del listado que se quiere ver dependiendo del límite puesto (ej: "limit=3&offset=2" muestra la segunda página del listado que fue seteado para mostrar de solo a 3 personajes a la vez)) default: 0'
+    'offset= (un número aleatorio para indicar la pagina del listado que se quiere ver dependiendo del límite puesto (ej: "limit=3&offset=2" muestra la segunda página del listado que fue seteado para mostrar de solo a 3 personajes a la vez)) default: 0'
 
 NOTA: si se quieren utilizar dos o más de estas funciones a la vez se debe poner un '&' para separarlas quedando:
 
