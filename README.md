@@ -17,9 +17,9 @@ Order by:
 
 'where= (y elegir un universo del 1 al 5 (1 - universo 616, 2 - paralelo utópico, 3 - universo 19999, 4 - universo 65, 5 - universo 20080)) default: todos'
 
-'limit= (un número aleatorio) default: todos'
+'limit= (un número aleatorio para limitar la cantidad de personaje que se ven) default: todos'
 
-'offset= (un número aleatorio) default: 0'
+'offset= (un número aleatorio para indicar que a partir del siguiente número del que se ingresa es donde arranca el listado) default: 0'
 
 NOTA: si se quieren utilizar dos o más de estas funciones a la vez se debe poner un '&' para separarlas quedando:
 
