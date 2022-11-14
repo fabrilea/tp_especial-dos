@@ -51,7 +51,7 @@ class CharacterApiController {
             $this->model->delete($id);
             $this->view->response($character);
         } else 
-            $this->view->response("El personaje con el id=$id no existe", 404);
+            $this->view->response("El personaje con el id= $id no existe", 404);
     }
 
     public function insertCharacter($params = null) {
@@ -80,14 +80,14 @@ class CharacterApiController {
 
     public function getFields($params = null) {
         $params = [
-            "sortBy" => "asc",
+            "sort" => "asc",
             "field" => "id",
             "where" => "db_personajes.universo",
             "limit" => "18446744073709551610",
             "offset" => "0"
         ];
-        if (isset($_GET['sortBy'])){ 
-            $params["sortBy"] = $_GET['sortBy'];
+        if (isset($_GET['sort'])){ 
+            $params["sort"] = $_GET['sort'];
         }
         if (isset($_GET['field'])){
             $params["field"] = $_GET['field'];
