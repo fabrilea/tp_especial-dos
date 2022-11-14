@@ -3,6 +3,7 @@ Bienvenidxs a la base de datos de personajes de Marvel
 -Para utilizar la base de datos, se debe importar el archivo que se encuentra dentro de la carpeta 'database'.
 
 -El endpoint que se debe utilizar para así poder visualizar las listas de personajes es:
+
     "http://localhost/tpe-dos/api/characters"
 
 
@@ -21,6 +22,7 @@ Order by:
 'offset= (un número aleatorio) default: 0'
 
 NOTA: si se quieren utilizar dos o más de estas funciones a la vez se debe poner un '&' para separarlas quedando:
+
 "http://localhost/tpe-dos/api/characters?sort=asc&field=id"
 
 
